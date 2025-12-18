@@ -1,7 +1,9 @@
 import "server-only";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 
 export async function findUserByEmail(email: string) {
+  const prisma = getPrisma();
+
   return prisma.user.findUnique({
     where: { email },
   });
