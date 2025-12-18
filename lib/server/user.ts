@@ -3,7 +3,8 @@ import { getPrisma } from "@/lib/prisma";
 
 export async function findUserByEmail(email: string) {
   const prisma = getPrisma();
-console.log(prisma);
+  alert(prisma);
+console.log(` test ${prisma}`);
   return prisma.user.findUnique({
     where: { email },
   });
