@@ -9,8 +9,8 @@ export async function findUserByEmail(email: string) {
 
     const users = rows as any[];
     return users.length ? users[0] : null;
-  } catch (error) {
-    console.error("findUserByEmail failed:", error);
-    throw new Error("Database query failed");
+  } catch (err) {
+    console.error("DB error:", err);
+    throw err;
   }
 }
